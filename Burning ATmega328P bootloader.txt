@@ -1,0 +1,41 @@
+Burning the bootloader to my Lipo checker board.
+I've tested this using the Arduino Mega 2560 dev board as the ISP
+
+Note that C7 has to either be jumpered or a temporary solder blob to connect DTR from the edge pin to the chip.
+Components that need to be loaded are:
+C1, C6, R4, R3(This one may not be required), oscillator.
+
+1. Connect Arduino Mega to your PC. Open Arduino IDE.
+
+2. Select Arduino Mega in Tools > Board > Arduino AVR Boards.
+
+3. Open the ArduinoISP sketch from the menu bar:
+
+4. Windows/Linux: File > Examples > 11.Arduino ISP > ArduinoISP
+
+5. Upload the sketch.
+
+6. Disconnect Arduino Mega from your PC.
+
+Connect the boards as follows:
+
+PROGRAMMER PINS				TARGET PINS
+PIN 10						RESET
+PIN 51						MISO (On my board it's incorrectly marked as MOSI)
+PIN 50						MOSI (On my board it's incorrectly marked as MISO)
+PIN 52						CLK
+5V							5V
+GND							GND
+10uF capacitor from GND to RESET on the MEGA
+
+7. Connect Arduino Mega to your PC again.
+
+8. Select Arduino Pro or Pro Mini in Tools > Board > Arduino AVR Boards.
+
+Select Arduino as ISP in Tools > Programmer.
+
+Select Tools > Burn Bootloader.
+
+Wait for the process to finish. When it's complete, avrdude done. Thank you. will be printed to console.
+
+Disconnect it all and reload BMP_Graphics to the MEGA
