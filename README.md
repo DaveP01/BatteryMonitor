@@ -1,4 +1,4 @@
-"# BatteryMonitor" 
+"# BatteryMonitor" For hobbyist Radio Control type Lithium batteries.
 Arduino code base for a Lithium, Ion or Polymer battery voltage checker and discharger (Suitable for Lithium cells of max 4.2V). Battery packs of between 1S to 6S are catered for as long as balance leads are avaiable, as the balance leads connect to the checker. The discharge function is via the main positive and negative leads on the battery.
 Based around the ATMega 328P chipset, spi OLED screen and an activity button.
 Functionality:
