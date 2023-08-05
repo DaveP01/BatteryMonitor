@@ -4,20 +4,24 @@
 // Lipo Checker will display voltages and percentages. Press the button //
 // once and the percentage will display in large font. Hold the button  //
 // down for 3 seconds and it will start a safe discharge to storage     //
-// cycle.																//
-//																	    //
+// cycle.													                                			//
+// Note: The above functionality has now changed somewhat. See the      //
+// see the README.MD file in the repo for more information.             //
 // I still need to work out the creep and how to resolve it.            //
-// Seems to be in the region of 0.01x volts. As of 13/04/22 I now suspect that is is due to thermal variation in the resistor and other components //
+// Seems to be in the region of 0.01x volts. As of 13/04/22 I now       //
+// suspect that is is due to thermal variation in the resistor and      //
+// other components //
 //////////////////////////////////////////////////////////////////////////
 
-// ****************************Need to add in the button press for large font routine and for the discharge sequence.********************************************
 
 /* To change voltage from 3 decimals to 2 decimal places use Line 486 as an example "oled.print (cell1, 2);" = 2 instead of 3 digits.
  *  Also need to sort out the voltage/percentage calculations as it varies from module to module by up to 6% !!!
+ *  Update: Variations between modules due to using resistor values of 10% accuracy instead of the original build using 1% accuracy resistors!
  *  Lastly, the damned logo. I've found the bmp and used the tool to get the hex values, loaded them into logo.h but it does not work.
  *  Question is, is it because the wrong logo file is being compiled or because it doesn't use the logo.h file at all.
  *  Only way to test is to rename all the logo files and see what happens. If nothing changes then perhaps it's not using the logo at all for some reason.
  *  Must look at the instructions again to see what is being linked and if the library is actually being used.
+ *  Logo issue now resolved I think.
  */
 
 #include <Wire.h>  // Include Wire if you're using I2C
